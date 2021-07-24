@@ -1,6 +1,6 @@
 # Acey-Deucey
 
-## A simple card game that involves betting
+## A simple card game with betting
 
 ---
 
