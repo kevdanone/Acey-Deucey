@@ -1,0 +1,231 @@
+:root {
+	--size-bank: 7.5rem;
+	--size-container: 35rem;
+
+	--font-size-title: 2.125rem;
+	--font-size-bank: 1.375rem;
+	--font-size-message: 1.25rem;
+
+	--color-text: hsl(0, 0%, 100%);
+	--color-shadow: hsl(0, 0%, 0%);
+	--color-bg-primary: hsla(120, 98%, 19%, 0.960);
+	--color-bg-secondary: hsl(120, 100%, 5%, 0.960);
+	--color-bet-button: hsl(110, 72%, 28%);
+	--color-bet-message: hsl(61, 72%, 28%);
+}
+
+body {
+	color: var(--color-text);
+	font-family: 'Eczar', serif;
+}
+
+.background__texture {
+	background-image: url("/img/texture.png");
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+.board {
+	background: radial-gradient(circle, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%) no-repeat;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	z-index: 2;
+}
+
+.board__title {
+	text-transform: uppercase;
+	font-size: var(--font-size-title);
+}
+
+.board__cards {
+	display: flex;
+	justify-content: space-around;
+	width: var(--size-container);
+	flex-wrap: wrap;
+	max-width: 100vw;
+}
+
+.board__cards :last-child {
+	margin-top: -5em;
+}
+
+.board__card {
+	position: relative;
+	width: 10.45em;
+	height: 15.25em;
+	box-shadow: inset 0px -1px 0px 5px var(--color-text);
+	border: solid 1px black;
+	border-radius: 5px;
+}
+
+.board__card::after {
+	content: "";
+	transform: scale(0.75);
+	filter: blur(5vw);
+	position: absolute;
+	top: 1.5vw;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.board__card--undefined {
+	background: url(../img/cards_sprites-min.png) -20.95em 15.2em;
+}
+
+.board__card--2 {
+	background: url(../img/cards_sprites-min.png) -10.5em 0;
+}
+
+.board__card--3 {
+	background: url(../img/cards_sprites-min.png) -20.95em 0;
+}
+
+.board__card--4 {
+	background: url(../img/cards_sprites-min.png) -31.4em 0;
+}
+
+.board__card--5 {
+	background: url(../img/cards_sprites-min.png) -41.85em 0;
+}
+
+.board__card--6 {
+	background: url(../img/cards_sprites-min.png) -52.32em 0;
+}
+
+.board__card--7 {
+	background: url(../img/cards_sprites-min.png) 73.4em 0;
+}
+
+.board__card--8 {
+	background: url(../img/cards_sprites-min.png) -73.3em 0;
+}
+
+.board__card--9 {
+	background: url(../img/cards_sprites-min.png) 52.45em 0;
+}
+
+.board__card--10 {
+	background: url(../img/cards_sprites-min.png) 41.85em 0;
+}
+
+.board__card--Jack {
+	background: url(../img/cards_sprites-min.png) 31.4em 0;
+}
+
+.board__card--Queen {
+	background: url(../img/cards_sprites-min.png) 20.95em 0;
+}
+
+.board__card--King {
+	background: url(../img/cards_sprites-min.png) 10.5em 0;
+}
+
+.board__card--As {
+	background: url(../img/cards_sprites-min.png) 0 0;
+}
+
+.board__card--flip-1 {
+	animation: flip-scale-2-ver-right 0.5s linear both;
+}
+
+.board__card--flip-2 {
+	animation: flip-scale-2-ver-left 0.5s linear both;
+}
+
+.board__bet {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bank {
+	font-size: var(--font-size-bank);
+	text-align: center;
+	padding: 0.5em 0;
+}
+
+.bet__message {
+	font-size: var(--font-size-message);
+	color: var(--color-bet-message);
+	text-align: center;
+	height: 2em;
+	max-width: 70vw;
+	line-height: 1.2;
+}
+
+.button {
+	outline: none;
+	border: none;
+	border-radius: 50px;
+	padding: 0.75em 2.5em;
+	font-size: 0.97em;
+	text-transform: uppercase;
+	letter-spacing: 0.094em;
+	cursor: pointer;
+	color: var(--color-text);
+	background: var(--color-bet-button);
+	box-shadow: 10px 10px 14px 1px rgba(00, 00, 00, 0.2);
+	transition: all 0.5s;
+}
+
+.button:hover {
+	box-shadow: none;
+}
+
+.bet__form {
+	display: none;
+}
+
+.bet__input {
+	border-radius: 50px;
+	border: none;
+	padding: 1em 6em 1em 2em;
+	margin-right: -7.5em;
+	outline: none;
+}
+
+.bet__play--again {
+	display: none;
+}
+
+
+@keyframes flip-scale-2-ver-left {
+	0% {
+
+		transform: rotateY(0);
+		transform-origin: 0% 50%;
+	}
+
+	50% {
+		transform: rotateY(90deg) scale(1.5);
+		transform-origin: 50% 50%;
+	}
+
+	100% {
+
+		transform-origin: 100% 50%;
+	}
+}
+
+@keyframes flip-scale-2-ver-right {
+	0% {
+		transform: rotateY(0);
+		transform-origin: 100% 50%;
+	}
+
+	50% {
+		transform: rotateY(-90deg) scale(1.5);
+		transform-origin: 50% 50%;
+	}
+
+	100% {
+		transform-origin: 0% 50%;
+	}
+}

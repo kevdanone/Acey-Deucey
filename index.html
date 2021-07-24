@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Acey Deucey</title>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="./styles/reset.css" />
+	<link rel="stylesheet" href="./styles/main.css" />
+	<link rel="stylesheet" href="./styles/media.css" />
+
+</head>
+
+<body>
+	<div class="background__texture"></div>
+
+	<main class="board">
+		<h1 class="board__title">Acey Deucey</h1>
+		<div class="board__cards">
+			<div id="card-min" class="board__card"></div>
+			<div id="card-max" class="board__card"></div>
+			<div id="card-guessed" class="board__card"></div>
+		</div>
+		<div class="board__bet">
+			<p id="board-message" class="bet__message"></p>
+			<p id="bankroll" class="bank"></p>
+			<button id="bet-play" class="button bet__play">Play</button>
+			<form id="bet-form" class="bet__form">
+				<input id="bet-input" class="bet__input" name="amount-bet" placeholder="Place your bets"
+					type="number" required>
+				<button class="button bet__button" type="submit">BET</button>
+			</form>
+			<button id="bet-again" class="button bet__play--again">Play Again</button>
+		</div>
+	</main>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>
